@@ -19,9 +19,6 @@ jobs:
       - name: Show Xcode version
         run: xcodebuild -version
 
-      - name: Run policy tests
-        run: bash Tests/run_policy_tests.sh
-
       - name: Build unsigned iOS app
         run: >-
           xcodebuild
@@ -52,3 +49,6 @@ jobs:
           path: dist/3106-3.2.3-unsigned.ipa
           if-no-files-found: error
           retention-days: 14
+
+      - name: Run policy tests
+        run: bash Tests/run_policy_tests.sh
